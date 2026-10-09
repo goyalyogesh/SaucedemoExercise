@@ -44,6 +44,9 @@ pipeline {
     post {
         always {
             junit testResults: 'target/surefire-reports/TEST-*.xml', allowEmptyResults: true
+            // Archive first, so the reports are kept even if the HTML Publisher plugin is missing
+            archiveArtifacts artifacts: 'target/reports/**, target/logs/**, target/surefire-reports/**',
+                    allowEmptyArchive: true
             publishHTML(target: [
                 reportName           : 'Extent Spark Report',
                 reportDir            : 'target/reports',
@@ -52,8 +55,6 @@ pipeline {
                 alwaysLinkToLastBuild: true,
                 allowMissing         : true
             ])
-            archiveArtifacts artifacts: 'target/reports/**, target/logs/**, target/surefire-reports/**',
-                    allowEmptyArchive: true
         }
     }
 }
