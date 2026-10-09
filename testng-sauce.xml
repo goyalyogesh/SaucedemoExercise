@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!-- Same end-to-end flow on Chrome and Firefox, one thread per <test> -->
+<suite name="SauceDemo Parallel E2E" parallel="tests" thread-count="2">
+
+    <listeners>
+        <listener class-name="com.saucedemo.automation.listeners.TestListener"/>
+    </listeners>
+
+    <test name="E2E - Chrome">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.saucedemo.automation.tests.SauceDemoE2ETest"/>
+        </classes>
+    </test>
+
+    <test name="E2E - Firefox">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="com.saucedemo.automation.tests.SauceDemoE2ETest"/>
+        </classes>
+    </test>
+
+</suite>

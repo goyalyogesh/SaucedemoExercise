@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!-- Fast browser-free checks: mvn test -DsuiteXmlFile=testng-unit.xml -->
+<suite name="Data Utils Unit Tests">
+    <test name="Data utils">
+        <classes>
+            <class name="com.saucedemo.automation.tests.DataUtilsTest"/>
+        </classes>
+    </test>
+</suite>

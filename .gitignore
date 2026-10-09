@@ -1,0 +1,28 @@
+# Build output and reports
+target/
+test-output/
+logs/
+
+# Eclipse
+.classpath
+.project
+.settings/
+bin/
+
+# IDE / OS
+.idea/
+*.iml
+.vscode/
+Thumbs.db
+.DS_Store
+
+# Claude Code local settings
+.claude/settings.local.json
+
+# Local Jenkins (war + home)
+.jenkins-local/
+
+# Planning notes (kept local)
+Analysis.md
+Implementation.md
+exercise_Notes.txt
